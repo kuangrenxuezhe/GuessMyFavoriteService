@@ -9,19 +9,22 @@ code_library_path=include/Code_Library/platform_cross
 wfshared_path=include/WFShared
 zjsshared_path=include/ZJSShared
 cppjson_path=include/json
+tinyxml_path=include/tinyxml
 include_path=-I. \
-			-I$(src_path) \
-			-I$(kafka_library_path)\
-			-I$(code_library_path)\
-			-I$(wfshared_path)\
-            -I$(zjsshared_path)\
-
+	-I$(src_path) \
+	-I$(kafka_library_path)\
+	-I$(code_library_path)\
+	-I$(wfshared_path)\
+	-I$(zjsshared_path)\
+	-I$(tinyxml_path)\
+            
 src=\
 	$(wildcard $(src_path)/*.cpp) \
 	$(wildcard $(src_path)/*.c)\
-	$(wildcard $(cppjson_path)/*.cpp)    
+	$(wildcard $(tinyxml_path)/*.cpp)\
+	$(wildcard $(cppjson_path)/*.cpp)
 
-cflags= -Wall -g $(include_path) 
+cflags= -w -Wall -g $(include_path) 
 headers=$(wildcard $(src_path)/*.h) 
 objs=$(patsubst %.c,%.o,$(patsubst %.cpp, %.o,$(patsubst %.cc,%.o,$(src))))
 

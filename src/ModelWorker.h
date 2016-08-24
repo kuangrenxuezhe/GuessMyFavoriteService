@@ -14,6 +14,7 @@
 #include <sys/types.h>
 #include <regex.h>
 using namespace std;
+using namespace nsZJSStream;
 extern Config *g_config;
 extern CDailyLog *g_log;
 extern int g_showScreen;
