@@ -510,12 +510,12 @@ int paserXML(const char *buffer)
     for (TiXmlElement* node = root->FirstChildElement(); node; node = node->NextSiblingElement()) 
     { 
         //递归处理子节点，获取节点指针
-        
-           if (strcmp("time", node->Value())==0  && node->GetText())
-           {
-           memcpy(appNode->entity, node->GetText(), strlen(node->GetText()));
-           }
-       
+
+        if (strcmp("time", node->Value())==0  && node->GetText())
+        {
+            memcpy(appNode->entity, node->GetText(), strlen(node->GetText()));
+        }
+
 
         //printf("%s :[%.*s]\n", node->Value(), strlen(node->GetText()), node->GetText());
         if (strcmp("text", node->Value())==0  && node->GetText())
