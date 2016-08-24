@@ -17,7 +17,7 @@
 
 //数据流读写采用小头编码方式
 //在每一个函数调用后数据流指针都会向后移动 注意保存初始指针地址！！！！！！
-namespace nsZJSEvent
+namespace nsZJSStream
 {
     class CStream
     {

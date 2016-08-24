@@ -21,6 +21,8 @@
 
 #pragma comment(lib,"Ws2_32.lib")
 
+#define _LINUX_64_SYSTEM
+
 #else
 #include <ctype.h>
 #include <dirent.h>

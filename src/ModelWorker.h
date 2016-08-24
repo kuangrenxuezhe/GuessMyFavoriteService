@@ -70,7 +70,7 @@ int UrlUnescape(char *buffer, long length, char *rchar)
 class CUsers
 {
     public:
-        struct SUserSrpInfo{wo
+        struct SUserSrpInfo{
             const static int SRP_ID_MAX_LEN             = 36;
             const static int SRP_WORD_MAX_LEN           = 64;
             int         UserID;
@@ -479,7 +479,7 @@ TiXmlNode *Search(char *pName, TiXmlNode* pParent)//遍历时候，把每个节�
 {
     if ( !pParent ) return NULL;
     TiXmlNode* pChild= NULL;
-    if (TiXmlNode::ELEMENT == pParent->Type() && (strcmp(pName, pParent->Value()) == 0))
+    if (TiXmlNode::TINYXML_ELEMENT == pParent->Type() && (strcmp(pName, pParent->Value()) == 0))
         //搜索元素值为pName的节点
     {
         return pParent;
@@ -511,11 +511,13 @@ int paserXML(const char *buffer)
     { 
         //递归处理子节点，获取节点指针
 
-        if (strcmp("time", node->Value())==0  && node->GetText())
-        {
-            memcpy(appNode->entity, node->GetText(), strlen(node->GetText()));
-        }
-
+/*
+ *        if (strcmp("time", node->Value())==0  && node->GetText())
+ *        {
+ *            memcpy(appNode->entity, node->GetText(), strlen(node->GetText()));
+ *        }
+ *
+ */
 
         //printf("%s :[%.*s]\n", node->Value(), strlen(node->GetText()), node->GetText());
         if (strcmp("text", node->Value())==0  && node->GetText())
