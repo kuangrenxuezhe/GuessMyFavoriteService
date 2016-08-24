@@ -1,0 +1,59 @@
+//////////////////////////////////////////////////////////////////////////
+//MD5Int.h
+//////////////////////////////////////////////////////////////////////////
+#ifndef _MD5_INTERFACE_H_
+#define _MD5_INTERFACE_H_
+
+#ifdef WIN32
+#define WINDOWS_PLATFORM
+#endif
+
+#ifdef WIN64
+#define WINDOWS_PLATFORM
+#endif
+
+//define
+#ifdef WINDOWS_PLATFORM
+#ifndef EXPORT
+	#ifdef _cplusplus
+		#define extern "C" EXPORT __declspec(dllexport)
+	#else
+		#define EXPORT __declspec(dllexport)
+	#endif
+#endif
+#else
+	#ifndef EXPORT
+		#define EXPORT ;
+	#endif
+#endif
+
+//////////////////////////////////////////////////////////////////////////
+//Interface of MD5
+
+//////////////////////////////////////////////////////////////////////////
+// 功能：取得MD5值，适用于较短的字符串
+// 参数：szString   字符串   szReturn  返回MD5值   uLength   返回MD5值的长度
+// 返回值：无
+// 说明：
+//////////////////////////////////////////////////////////////////////////
+EXPORT	void MD5String(const char *szString, unsigned char *szReturn, unsigned int uLength);
+
+//////////////////////////////////////////////////////////////////////////
+// 功能：取得MD5值，适用于较长的字符串
+// 参数：szString   字符串   uLength  字符串长度   szReturn  返回MD5值默认128位
+// 返回值：无
+// 说明：
+//////////////////////////////////////////////////////////////////////////
+EXPORT  void MD5Default(const char *szString, unsigned int uLength, unsigned char *szReturn);
+
+//////////////////////////////////////////////////////////////////////////
+// 功能：取得MD5值
+// 参数：szString   字符串   uStringLength  字符串长度   szReturn  返回MD5值 
+//		uReturnLength  返回MD5值长度
+// 返回值：无
+// 说明：
+//////////////////////////////////////////////////////////////////////////
+EXPORT	void MD5Segment(const char *szString, unsigned int uStringLength, unsigned char *szReturn , unsigned int uReturnLength);
+
+#endif
+
