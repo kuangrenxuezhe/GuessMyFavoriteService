@@ -7,6 +7,7 @@ typedef uint32_t WINAPI TFunHead;
 #else
 typedef void* TFunHead;
 #endif
+
 namespace nsZJSThread
 {
     class CThread{
@@ -115,6 +116,6 @@ namespace nsZJSThread
     private:
         uint32_t m_iMax;
     };  
-}   // end of namespace
 
+}   // end of namespace
 #endif  // end of _ZJS_THEARD_H_

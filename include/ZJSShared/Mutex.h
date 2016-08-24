@@ -201,6 +201,5 @@ namespace nsZJSMutex
         pthread_rwlock_t    m_rwlock;             // posix系统的读写锁结构
 #endif
     };
-
 }   // end of namespace
 #endif //_ZJS_MUTEX_H_
